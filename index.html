@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
         <div class="header-container">
           <nav class="header-nav">
@@ -37,7 +37,9 @@
               </li>
             </ul>
           </nav>
-          <button class="button" type="button">Замовити дзвінок</button>
+          <button class="button modal-btn-open" type="button">
+            Замовити дзвінок
+          </button>
           <!-- обратный звонок-->
         </div>
       </div>
@@ -189,7 +191,7 @@
                 </article>
               </li>
             </ul>
-            <button class="carousel-button" type="button">
+            <button class="carousel-button next" type="button">
               <svg class="carousel-arrow">
                 <use href="./images/icons.svg#icon-arrow"></use>
               </svg>
@@ -204,7 +206,56 @@
               <h2 class="contact-title section-title">
                 Приєднуйтесь до мережі пекарень
               </h2>
-              <p>Заповни форму, щоб ми звʼязались з тобою!</p>
+              <form name="contact-form" autocomplete="on" novalidate>
+                <div class="form-field">
+                  <label class="label-input visually-hidden" for="user-name"
+                    >Введіть ваше ім'я</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="user-name"
+                    name="user-name"
+                    placeholder="Введіть ваше ім'я"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="label-input visually-hidden" for="user-tel"
+                    >Телефон</label
+                  >
+                  <!--Даже если нам не нужен label, то мы всерано должны его указать с input,
+            спрятать label можем с помошью класса visually-hidden-->
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="user-tel"
+                    name="user-tel"
+                    placeholder="Телефон"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="label-input visually-hidden" for="user-email"
+                    >Електрона пошта</label
+                  >
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Електрона пошта"
+                  />
+                </div>
+                <button class="form-button button" type="submit">
+                  Замовити дзвінок
+                </button>
+                <!-- type="submit" отправляет данные полученые с формы на сервер-->
+                <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-term-link" href="#"
+                    >з політикою конфіденційності</a
+                  >
+                </p>
+              </form>
             </div>
             <iframe
               class="contact-map"
@@ -286,5 +337,64 @@
         </div>
       </div>
     </footer>
+    <!--создаем модальное окно, в конце всей страницы-->
+    <div class="backdrop">
+      <!-- is-hidden -->
+      <div class="modal">
+        <button class="modal-btn-close" type="button">Close</button>
+        <h2>Замовити дзвінок</h2>
+        <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
+        <form name="modal-form" autocomplete="on" novalidate>
+          <div class="form-field">
+            <label class="label-input visually-hidden" for="user-name"
+              >Введіть ваше ім'я</label
+            >
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Введіть ваше ім'я"
+            />
+          </div>
+          <div class="form-field">
+            <label class="label-input visually-hidden" for="user-tel"
+              >Телефон</label
+            >
+            <!--Даже если нам не нужен label, то мы всерано должны его указать с input,
+            спрятать label можем с помошью класса visually-hidden-->
+            <input
+              class="form-input"
+              type="tel"
+              id="user-tel"
+              name="user-tel"
+              placeholder="Телефон"
+            />
+          </div>
+          <div class="form-field">
+            <label class="label-input visually-hidden" for="user-email"
+              >Електрона пошта</label
+            >
+            <input
+              class="form-input"
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Електрона пошта"
+            />
+          </div>
+          <button class="form-button button" type="submit">
+            Замовити дзвінок
+          </button>
+          <!-- type="submit" отправляет данные полученые с формы на сервер-->
+          <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="form-term-link" href="#">з політикою конфіденційності</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <!--все скрипты подключаются в конце Body-->
+    <script src="./js/jsmodal.js"></script>
   </body>
 </html>
