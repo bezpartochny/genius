@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <!--окончание ссылки на шрифт-->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <header class="header">
@@ -154,6 +154,11 @@
             <ul class="formats-list">
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./images/Walrus.jpg"
+                    alt="Walrus-format"
+                  />
                   <h3 class="format-title" lang="en">Walrus</h3>
                   <!--Чтобы не прописывать класс к каждому однотипному параграфу, можно параграфы обьединить дивом div и указать для него класс.
               Хотя можно и к каждому параграфу прописать один и тот же каласс-->
@@ -170,6 +175,11 @@
               </li>
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./images/Horseshoe.jpg"
+                    alt="Horseshoe-format"
+                  />
                   <h3 class="format-title" lang="en">Horseshoe</h3>
                   <div class="format-text">
                     <p>Площа: до 25 м2</p>
@@ -181,6 +191,11 @@
               </li>
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./images/Handlebar.jpg"
+                    alt="Handlebar-format"
+                  />
                   <h3 class="format-title" lang="en">Handlebar</h3>
                   <div class="format-text">
                     <p>Площа: до 15 м2</p>
@@ -338,13 +353,13 @@
       </div>
     </footer>
     <!--создаем модальное окно, в конце всей страницы-->
-    <div class="backdrop">
+    <div class="backdrop is-hidden">
       <!-- is-hidden -->
       <div class="modal">
         <button class="modal-btn-close" type="button">Close</button>
         <h2>Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
-        <form name="modal-form" autocomplete="on" novalidate>
+        <form name="modal-form" autocomplete="on">
           <div class="form-field">
             <label class="label-input visually-hidden" for="user-name"
               >Введіть ваше ім'я</label
@@ -355,6 +370,9 @@
               id="user-name"
               name="user-name"
               placeholder="Введіть ваше ім'я"
+              minlength="2"
+              maxlength="20"
+              required
             />
           </div>
           <div class="form-field">
@@ -369,7 +387,10 @@
               id="user-tel"
               name="user-tel"
               placeholder="Телефон"
+              required
+              pattern="^\+[0-9]{12}"
             />
+            <!-- в паттерне можем указать что мы можем использовать цифры от 1 до 9, длинной 12 цифр с использованием + в начале -->
           </div>
           <div class="form-field">
             <label class="label-input visually-hidden" for="user-email"
@@ -381,8 +402,20 @@
               id="user-email"
               name="user-email"
               placeholder="Електрона пошта"
+              required
             />
           </div>
+          <!-- <div class="checkbox">
+            <input
+              class="checkbox-input visually-hidden"
+              type="checkbox"
+              id="terms-condition"
+              name="terms-condition"
+            />
+            <label class="checkbox-label" for="terms-condition">
+              Я погоджуюсь з політикою конфіденційності
+            </label>
+          </div> -->
           <button class="form-button button" type="submit">
             Замовити дзвінок
           </button>

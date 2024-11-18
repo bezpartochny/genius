@@ -1,0 +1,42 @@
+/*Base*/
+/* символ * (звездочка) добавляет свойсто ко всем элементам*/
+
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--color-primary-dark);
+    /*цвет текста*/
+    background-color: var(--color-primary-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    /*line-height - это атрибут который показывает всю высоту рядка, нельзя указывать в пикселях, а только как коефициент между font-size и line-height.
+Например font-size 18px, а line-height 27px, то нам нужно line-height разделить на font-size. 27 / 18 = 1.5. line-height: 1.5. Всегда используем коефициент.
+*/
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+ul {
+    margin: o;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,12 @@
+/*link section*/
+.link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    line-height: 1, 5;
+    transition: color 0.3s;
+    /*мы можем указать время перехода цвета, черех transition*/
+}
+
+.link:hover {
+    color: var(--color-brand-normal);
+}
