@@ -18,6 +18,7 @@
 @import './components/format-card';
 @import './components/input';
 @import './components/links';
+@import './components/pagination';
 
 @import './layout/advantages-section';
 @import './layout/chef-section';
@@ -43,64 +44,3 @@
     "extensionName": ".min.css", в файле добавится префикс .min Разработчикам будет понятно что в этом файле минификованные стили
     "savePath": "/css/" * //Путь к дериктории, где будет формироваться скомпелированный файл .css*
 */
-
-
-
-/* Form */
-.form-field {
-    margin-bottom: 32px;
-}
-
-.form-label {
-    display: block;
-}
-
-
-
-.form-button {
-    display: block;
-    margin: 0 auto;
-    margin: 0 auto 24px;
-}
-
-.form-terms {
-    margin: 0 auto;
-    max-width: 220px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.form-term-link {
-    color: var(--color-primary-dark);
-    text-underline-offset: 2px;
-}
-
-/* .checkbox {
-    position: relative;
-}
-
-.checkbox-input {
-    appearance: none;
-}
-
-.checkbox-input:checked + .checkbox-label::before {
-    background-color: var(--color-brand-dark);
-}
-
-.checkbox-label {
-    padding-left: 24px;
-}
-
-.checkbox-label::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 5px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--color-brand-dark);
-    border-radius: 3px;
-    content: '';
-} */

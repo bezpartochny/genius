@@ -1,27 +1,26 @@
-/*Base*/
+/*Base+*/
 /* символ * (звездочка) добавляет свойсто ко всем элементам*/
-
-* {
-    box-sizing: border-box;
-}
-
+*,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    color: var(--color-primary-dark);
-    /*цвет текста*/
+    color: var(--color-primary-dark); //цвет текста
     background-color: var(--color-primary-light);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    line-height: 1.5;
-    /*line-height - это атрибут который показывает всю высоту рядка, нельзя указывать в пикселях, а только как коефициент между font-size и line-height.
-Например font-size 18px, а line-height 27px, то нам нужно line-height разделить на font-size. 27 / 18 = 1.5. line-height: 1.5. Всегда используем коефициент.
-*/
+    line-height: 1.5; /*line-height - это атрибут который показывает всю высоту рядка, нельзя указывать в пикселях, а только как коефициент между font-size и line-height.
+    Например font-size 18px, а line-height 27px, то нам нужно line-height разделить на font-size. 27 / 18 = 1.5. line-height: 1.5. Всегда используем коефициент.
+    */
+
     @media screen and (min-width: $bp-tablet) {
         font-size: 18px;
         font-weight: 400;
@@ -31,8 +30,19 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p {
     margin-top: 0;
+}
+
+img {
+    //добавляем к нашим изображениям данные параметры что-юы они были респонсивные
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; //свойство чтобы не растягивалась картинка
 }
 
 a {
@@ -45,7 +55,7 @@ address {
 }
 
 ul {
-    margin: o;
+    margin: 0;
     padding: 0;
-    list-style: none;
+    list-style-type: none;
 }

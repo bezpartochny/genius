@@ -1,3 +1,4 @@
+/*carousel-button+*/
 .carousel-button {
     display: flex;
     flex-shrink: 0;
@@ -17,21 +18,10 @@
 
     &:hover {
         background-color: var(--color-primary-dark);
+        fill: var(--color-primary-light);
     }
     
     &.next {
         transform: rotate(180deg);
     }
-}
-
-
-
-.carousel-arrow {
-    width: 16px;
-    height: 16px;
-    fill: var(--color-primary-dark);
-}
-
-.carousel-button:hover .carousel-arrow {
-    fill: var(--color-primary-light);
 }
