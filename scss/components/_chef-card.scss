@@ -1,0 +1,35 @@
+.chef-card {
+    display: flex;
+    gap: 30px;
+
+    &__photo {
+        border-radius: 4px 4px 4px 200px;
+        box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
+    }
+    
+    &__title {
+        margin-bottom: 16px;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    
+    &__text {
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    
+}
+
+
+
+/*.chef-text p и .chef-text p:last-child можно заменить одной надписью,
+тоесть у всех будет margin-bottom: 24px кроме последнего абзаца (но браузер может добавить свой margin к последнему элементу,
+так что лучше и для последнего элемента прописать значение )
+.chef-text p:not(:last-child) {
+    margin-bottom: 24px;
+}
+*/

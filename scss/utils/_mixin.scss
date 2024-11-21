@@ -3,3 +3,17 @@
     height: $height;
     background-color: $color;
 }
+
+/* 
+
+для такого упрощеного задания ширины,
+высоты и цвета используется Директива mixin
+
+.circle {
+ @include circle(100px, 100px, white);
+} для такого упрощеного задания ширины, высоты и цвета используется mixin
+
+.circle-big {
+@include circle(200px, 200px, green);
+}
+*/

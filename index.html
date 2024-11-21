@@ -17,14 +17,18 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="header-container">
-          <nav class="header-nav">
+        <div class="header__container">
+          <!--За методологией БЕМ классы в css нужно прописывать так
+          имя блока __ (двойное подчеркивание) имя елемента
+          Елемент должен отвечать на вопрос Что это такое?
+          -->
+          <nav class="header__nav">
             <!--тут будет меню-->
             <a href="/"> <img src="./images/logo.svg" alt="логотип сайту" /> </a
             ><!--Logo-->
-            <ul class="header-menu">
+            <ul class="header__menu">
               <li>
-                <a class="link" href="#tradition-section">Нащі традиції</a>
+                <a class="link" href="#traditions-section">Нащі традиції</a>
               </li>
               <li>
                 <a class="link" href="#chefs-section">Шеф кухарі</a>
@@ -37,19 +41,64 @@
               </li>
             </ul>
           </nav>
-          <button class="button modal-btn-open" type="button">
+          <button class="header__button button modal-btn-open" type="button">
             Замовити дзвінок
           </button>
+          <button class="header__burger modal-btn-open" type="button">
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
           <!-- обратный звонок-->
+          <!-- Создаем меню для смартфона-->
+          <div class="mobile-menu">
+            <button class="mobile-menu__btn-close menu-btn-close" type="button">
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <a class="mobile-menu__logo" href="/">
+              <img
+                src="./images/logo-dark.svg"
+                alt="Логотип сучасної пекарні"
+              />
+            </a>
+            <ul class="mobile-menu__list">
+              <li>
+                <a class="mobile-menu__link" href="#traditions-section">
+                  Наші традиції
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#chefs-section">
+                  Шеф-кухарі
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#formats-section">Формати</a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#contact-section">
+                  Контакти
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
     <main>
       <section class="hero-section">
         <div class="container">
-          <h1 class="hero-title">
-            <span class="accent">Сучасна</span> пекарня
+          <h1 class="hero-section__title">
+            <span class="text-brand">Сучасна</span> пекарня
           </h1>
+          <button
+            class="hero-section__button button modal-btn-open"
+            type="button"
+          >
+            Замовити дзвінок
+          </button>
         </div>
       </section>
       <section class="advantages-section">
@@ -57,60 +106,78 @@
           <h2 class="visually-hidden">Нащі переваги</h2>
           <!-- Если нужно скрыть контент от глаз, но оставить для скринридера,
         используем класс hidden и прописываем в css-->
-          <ul class="advantages-list">
-            <li class="advantages-item">Великий попит на ринку</li>
-            <li class="advantages-item">Доступні за бюджетом формати</li>
-            <li class="advantages-item">Досвідчена управлінська команда</li>
+          <ul class="advantages-section__list">
+            <li class="advantages-section__item">Великий попит на ринку</li>
+            <li class="advantages-section__item">
+              Доступні за бюджетом формати
+            </li>
+            <li class="advantages-section__item">
+              Досвідчена управлінська команда
+            </li>
           </ul>
         </div>
       </section>
-      <section class="tradition-section section" id="tradition-section">
+      <section class="traditions-section section" id="traditions-section">
         <div class="container">
-          <div class="tradition-container">
-            <div class="tradition-content">
-              <h2 class="tradition-title section-title">
+          <div class="traditions-section__container">
+            <div class="traditions-section__content">
+              <h2 class="traditions-section__title section__title">
                 Новий формат традицій
               </h2>
-              <p class="tradition-text">
-                <span class="brand uppercase">Shop bakery</span> — це пекарня,
-                яка взяла все найкраще, і зберегла смак традиційної випічки та
-                натуральність інгредієнтів.
+              <p>
+                <span class="text-brand text-bold text_uppercase"
+                  >Shop bakery</span
+                >
+                — це пекарня, яка взяла все найкраще, і зберегла смак
+                традиційної випічки та натуральність інгредієнтів.
               </p>
-              <p class="tradition-text limited">
+              <p
+                class="traditions-section__text traditions-section__text--limited"
+              >
+                <!-- можна просто оставить класс limited но по методологии БЕМ нужно делать модификатор.
+                 Модификатор обозначает как -- после названия елемента или блока
+                 модификатор отвечает на вопрос КакоЙ?
+                 Модификатор никогда нельзя прописывать отдельно, всегда в паре с елементом к которому он используется -->
                 Ми працюємо як найвідоміші мережі —
-                <span class="brand">5 хвилин і замовлення готове.</span> А ще у
-                наших пекарень стильний дизайн та висока якість обслуговування!
+                <span class="text-brand text-bold"
+                  >5 хвилин і замовлення готове.</span
+                >
+                А ще у наших пекарень стильний дизайн та висока якість
+                обслуговування!
               </p>
             </div>
             <img
+              class="traditions-section__image"
               src="./images/backery-man.svg"
               alt="чоловік пекар дивиться на свіжі батони з посмішкою"
             />
           </div>
         </div>
       </section>
-      <section class="section" id="chefs-section">
+      <section class="chefs-section section" id="chefs-section">
         <div class="container">
-          <h2 class="chefs-title section-title centered">
-            Нащі найкращі <span class="accent">шеф-кухарі</span>
+          <h2
+            class="chefs-section__title section__title section__title--centered"
+          >
+            Нащі найкращі <span class="text-brand-dark"><br />шеф-кухарі</span>
           </h2>
-          <ul class="chefs-list">
-            <li class="chefs-item">
+          <ul class="chefs-section__list">
+            <li class="chefs-section__item">
               <article class="chef-card">
                 <img
-                  class="chef-photo"
+                  class="chef-card__photo"
                   src="./images/nastya.jpg"
                   alt="nastya chef"
                 />
                 <div>
-                  <h3 class="chef-title">Настя</h3>
-                  <div class="chef-text">
-                    <p>Привіт, я Настя!</p>
-                    <p>
+                  <h3 class="chef-card__title">Настя</h3>
+                  <div class="chef-card__text">
+                    <p class="chef-card__text">Привіт, я Настя!</p>
+                    <p class="chef-card__text">
                       Вже 10 років, я втілюю<br />
                       у життя цікаві та смачні ідеї.
                     </p>
-                    <p>
+                    <p class="chef-card__text">
                       Я випічу для вас<br />
                       найсмачніщі вироби!
                     </p>
@@ -118,23 +185,25 @@
                 </div>
               </article>
             </li>
-            <li class="chefs-item">
+            <li class="chefs-section__item">
               <article class="chef-card">
                 <img
-                  class="chef-photo"
+                  class="chef-card__photo"
                   src="./images/vlad.jpg"
                   alt="vlad chef"
                 />
                 <div>
-                  <h3 class="chef-title">Влад</h3>
-                  <div class="chef-text">
-                    <p>Привіт, я Влад!</p>
-                    <p>
+                  <h3 class="chef-card__title">Влад</h3>
+                  <div class="chef-card__text">
+                    <p class="chef-card__text">Привіт, я Влад!</p>
+                    <p class="chef-card__text">
                       Мій кодитерський стаж вже 18 років.SHOP BEKERY - це наша
                       любов, з якою ми ділимось кожен раз з Вами через нашу
                       випічку!
                     </p>
-                    <p>Я зроблю для вас унікальну начинку на будь який смак!</p>
+                    <p class="chef-card__text">
+                      Я зроблю для вас унікальну начинку на будь який смак!
+                    </p>
                   </div>
                 </div>
               </article>
@@ -142,27 +211,31 @@
           </ul>
         </div>
       </section>
-      <section class="section" id="formats-section">
+      <section class="formats-section section" id="formats-section">
         <div class="container">
-          <h2 class="formats-title section-title centered">Формати</h2>
-          <div class="formats-container">
+          <h2
+            class="formats-section__title section__title section__title--centered"
+          >
+            Формати
+          </h2>
+          <div class="formats-section__container">
             <button class="carousel-button" type="button">
               <svg class="carousel-arrow">
                 <use href="./images/icons.svg#icon-arrow"></use>
               </svg>
             </button>
-            <ul class="formats-list">
-              <li class="formats-item">
+            <ul class="formats-section__list">
+              <li class="formats-section__item">
                 <article class="format-card">
                   <img
-                    class="format-image"
+                    class="format-card__image"
                     src="./images/Walrus.jpg"
                     alt="Walrus-format"
                   />
-                  <h3 class="format-title" lang="en">Walrus</h3>
+                  <h3 class="format-card__title" lang="en">Walrus</h3>
                   <!--Чтобы не прописывать класс к каждому однотипному параграфу, можно параграфы обьединить дивом div и указать для него класс.
               Хотя можно и к каждому параграфу прописать один и тот же каласс-->
-                  <div class="format-text">
+                  <div class="format-card__text">
                     <p>Площа: до 120 м2</p>
                     <p>Меню: розширене меню</p>
                     <p>
@@ -173,15 +246,15 @@
                   </div>
                 </article>
               </li>
-              <li class="formats-item">
+              <li class="formats-section__item">
                 <article class="format-card">
                   <img
-                    class="format-image"
+                    class="format-card__image"
                     src="./images/Horseshoe.jpg"
                     alt="Horseshoe-format"
                   />
-                  <h3 class="format-title" lang="en">Horseshoe</h3>
-                  <div class="format-text">
+                  <h3 class="format-card__title" lang="en">Horseshoe</h3>
+                  <div class="format-card__text">
                     <p>Площа: до 25 м2</p>
                     <p>Меню: найпопулярніші позиції меню</p>
                     <p>Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря</p>
@@ -189,15 +262,15 @@
                   </div>
                 </article>
               </li>
-              <li class="formats-item">
+              <li class="formats-section__item">
                 <article class="format-card">
                   <img
-                    class="format-image"
+                    class="format-card__image"
                     src="./images/Handlebar.jpg"
                     alt="Handlebar-format"
                   />
-                  <h3 class="format-title" lang="en">Handlebar</h3>
-                  <div class="format-text">
+                  <h3 class="format-card__title" lang="en">Handlebar</h3>
+                  <div class="format-card__text">
                     <p>Площа: до 15 м2</p>
                     <p>Меню: найпопулярніші позиції меню</p>
                     <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
@@ -216,67 +289,66 @@
       </section>
       <section class="contact-section section" id="contact-section">
         <div class="container">
-          <div class="contact-container">
-            <div class="contact-form">
-              <h2 class="contact-title section-title">
+          <div class="contact-section__container">
+            <div class="contact-section__form">
+              <h2 class="contact-section__title section__title">
                 Приєднуйтесь до мережі пекарень
               </h2>
+              <p>Заповни форму, щоб ми звʼязались з тобою!</p>
               <form name="contact-form" autocomplete="on" novalidate>
-                <div class="form-field">
-                  <label class="label-input visually-hidden" for="user-name"
+                <div class="contact-section__form-field input">
+                  <label class="input__label visually-hidden" for="user-name"
                     >Введіть ваше ім'я</label
                   >
                   <input
-                    class="form-input"
+                    class="input__control"
                     type="text"
                     id="user-name"
                     name="user-name"
                     placeholder="Введіть ваше ім'я"
                   />
                 </div>
-                <div class="form-field">
-                  <label class="label-input visually-hidden" for="user-tel"
+                <div class="contact-section__form-field input">
+                  <label class="input__label visually-hidden" for="user-tel"
                     >Телефон</label
                   >
                   <!--Даже если нам не нужен label, то мы всерано должны его указать с input,
             спрятать label можем с помошью класса visually-hidden-->
                   <input
-                    class="form-input"
+                    class="input__control"
                     type="tel"
                     id="user-tel"
                     name="user-tel"
                     placeholder="Телефон"
                   />
                 </div>
-                <div class="form-field">
-                  <label class="label-input visually-hidden" for="user-email"
+                <div class="contact-section__form-field input">
+                  <label class="input__label visually-hidden" for="user-email"
                     >Електрона пошта</label
                   >
                   <input
-                    class="form-input"
+                    class="input__control"
                     type="email"
                     id="user-email"
                     name="user-email"
                     placeholder="Електрона пошта"
                   />
                 </div>
-                <button class="form-button button" type="submit">
+                <button class="contact-section__button button" type="submit">
                   Замовити дзвінок
                 </button>
                 <!-- type="submit" отправляет данные полученые с формы на сервер-->
                 <p class="form-terms">
                   Натискаючи на кнопку я погоджуюсь
-                  <a class="form-term-link" href="#"
+                  <a class="form-terms__link" href="#"
                     >з політикою конфіденційності</a
                   >
                 </p>
               </form>
             </div>
             <iframe
-              class="contact-map"
+              class="contact-section__map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.155629293507!2d36.33796088195868!3d50.01315439163805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412709e740feed1d%3A0x6e795942187f8d7a!2z0YPQuy4g0JLQsNC70LXQvdGC0LjQvdC-0LLRgdC60LDRjywgMjgsINCl0LDRgNGM0LrQvtCyLCDQpdCw0YDRjNC60L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2MTAwMA!5e0!3m2!1sru!2sua!4v1731437135127!5m2!1sru!2sua"
-              width="603"
-              height="595"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -298,7 +370,7 @@
             </div>
             <ul class="footer-menu">
               <li>
-                <a class="link" href="#tradition-section">Наші традиції</a>
+                <a class="link" href="#traditions-section">Наші традиції</a>
               </li>
               <li><a class="link" href="#chefs-section">Шеф кухарі</a></li>
               <li><a class="link" href="#formats-section">Формати</a></li>
@@ -356,16 +428,18 @@
     <div class="backdrop is-hidden">
       <!-- is-hidden -->
       <div class="modal">
-        <button class="modal-btn-close" type="button">Close</button>
+        <button class="modal__btn-close modal-btn-close" type="button">
+          Close
+        </button>
         <h2>Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
         <form name="modal-form" autocomplete="on">
-          <div class="form-field">
-            <label class="label-input visually-hidden" for="user-name"
+          <div class="modal__form-field input">
+            <label class="input__label visually-hidden" for="user-name"
               >Введіть ваше ім'я</label
             >
             <input
-              class="form-input"
+              class="input__control"
               type="text"
               id="user-name"
               name="user-name"
@@ -375,14 +449,14 @@
               required
             />
           </div>
-          <div class="form-field">
-            <label class="label-input visually-hidden" for="user-tel"
+          <div class="modal__form-field input">
+            <label class="input__label visually-hidden" for="user-tel"
               >Телефон</label
             >
             <!--Даже если нам не нужен label, то мы всерано должны его указать с input,
             спрятать label можем с помошью класса visually-hidden-->
             <input
-              class="form-input"
+              class="input__control"
               type="tel"
               id="user-tel"
               name="user-tel"
@@ -392,12 +466,12 @@
             />
             <!-- в паттерне можем указать что мы можем использовать цифры от 1 до 9, длинной 12 цифр с использованием + в начале -->
           </div>
-          <div class="form-field">
-            <label class="label-input visually-hidden" for="user-email"
+          <div class="modal__form-field input">
+            <label class="input__label visually-hidden" for="user-email"
               >Електрона пошта</label
             >
             <input
-              class="form-input"
+              class="input__control"
               type="email"
               id="user-email"
               name="user-email"
@@ -416,7 +490,7 @@
               Я погоджуюсь з політикою конфіденційності
             </label>
           </div> -->
-          <button class="form-button button" type="submit">
+          <button class="modal__button button" type="submit">
             Замовити дзвінок
           </button>
           <!-- type="submit" отправляет данные полученые с формы на сервер-->
@@ -428,6 +502,9 @@
       </div>
     </div>
     <!--все скрипты подключаются в конце Body-->
-    <script src="./js/jsmodal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./js/formats-slider.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

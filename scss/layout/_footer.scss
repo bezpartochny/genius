@@ -1,0 +1,87 @@
+/*Footer*/
+.footer {
+    position: relative;
+    background-color: var(--color-primary-dark);
+    background-image: url(../images/footer-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 32px 0;
+    /*padding всегда делаем вверху (тоесть в основной секции)*/
+}
+
+.footer::before,
+.footer::after {
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0;
+    content: '';
+}
+
+.footer::before {
+
+    background-image: url(../images/decor-brad-small.png);
+    width: 180px;
+    height: 120px;
+}
+
+.footer::after {
+    background-image: url(../images/decor-brad-big.png);
+    width: 380px;
+    height: 190px;
+    right: 0;
+}
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
+    flex-grow: 1;
+    /* вместо flex-grow: 1; можно использовать flex-basis: 50%; будет означать что элемент будет использовать 50% контейнера*/
+    margin: 0 auto;
+}
+
+.address-list,
+.address-info {
+    flex-grow: 1;
+    margin: 0 auto;
+}
+
+.address-link {
+    color: var(--color-primary-light);
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.address-link:hover {
+    color: var(--color-brand-normal);
+}
+
+.addres-social {
+
+    width: 32px;
+    height: 32px;
+    fill: var(--color-primary-light);
+    /*именно с помошью fill задается цвет иконкам, а не с помошью color, так сказать это заливка*/
+}
+
+.addres-social:hover {
+    fill: var(--color-brand-normal);
+}
+
+.address-copyright {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-primary-light);
+}

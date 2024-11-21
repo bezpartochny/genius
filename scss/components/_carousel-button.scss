@@ -1,0 +1,37 @@
+.carousel-button {
+    display: flex;
+    flex-shrink: 0;
+    /*flex-shrink свойство CSS, которое определяет фактор сжатия flex-элемента
+    если браузер что-то сжимает, то мы можем отменить сжатие*/
+    align-items: center;
+    /*выравнивание по высоте*/
+    justify-content: center;
+    /*выравнивание по горизонтали*/
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--color-primary-dark);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-primary-dark);
+    }
+    
+    &.next {
+        transform: rotate(180deg);
+    }
+}
+
+
+
+.carousel-arrow {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-primary-dark);
+}
+
+.carousel-button:hover .carousel-arrow {
+    fill: var(--color-primary-light);
+}
